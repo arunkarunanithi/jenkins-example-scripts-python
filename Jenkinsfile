@@ -6,7 +6,7 @@ pipeline {
         sh 'python3 --version'
       }
     }
-    stage('hello') {
+    stage('EC2 Instance') {
       steps {
         sh 'python3 hello.py'
       }
