@@ -3,9 +3,8 @@ from botocore.config import Config
 
 my_config = Config(
     region_name='us-east-2',
-    signature_version='v4',
-    proxies=proxy_definitions
-)
+    signature_version='v4'
+    )
 
 client = boto3.client('kinesis', config=my_config)
 
