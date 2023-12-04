@@ -1,8 +1,15 @@
 import boto3
+from botocore.config import Config
+
+my_config = Config(
+    region_name='us-east-2',
+    signature_version='v4',
+    proxies=proxy_definitions
+)
+
+client = boto3.client('kinesis', config=my_config)
+
 ec2=boto3.resource ('ec2')
-regions = ec2.describe_regions('us-east-1')
-print(regions)
-print(regions)
 instance=ec2.create_instances (
     ImageId='ami-063f64fd624326307',
     MinCount=1,
